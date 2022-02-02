@@ -3,11 +3,34 @@ class Tag
 {
   private $name;
   private $attrs;
-  public function __construct($name, $attrs = [])
+  public function __construct($name)
   {
     $this->name = $name;
-    $this->attrs = $attrs; // записываем атрибуты в свойство
   }
+
+  public function setAttr($name, $value)
+  {
+    $this->attrs[$name] = $value;
+    return $this;
+  }
+
+  public function setAttrs($attrs)
+  {
+    foreach ($attrs as $name => $value) {
+      $this->setAttr($name, $value);
+    }
+    return $this;
+  }
+
+
+
+  public function removeAttr($name)
+  {
+    $arr = $this->attrs;
+    unset($arr[$name]);
+    return $this;
+  }
+
 
   public function open()
   {

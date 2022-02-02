@@ -4,5 +4,8 @@ foreach ($arr as $value) {
   require_once($value . ".php");
 }
 
-$tag = new Tag('input', ['id' => 'test', 'class' => 'eee bbb']);
+$arr = ['id' => 'test', 'class' => 'eee bbb'];
+
+$tag = new Tag('input');
+$tag->setAttrs($arr);
 echo $tag->open(); // выведет <input id="test" class="eee bbb">
