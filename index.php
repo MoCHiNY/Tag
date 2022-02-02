@@ -7,5 +7,5 @@ foreach ($arr as $value) {
 $arr = ['id' => 'test', 'class' => 'eee bbb'];
 
 $tag = new Tag('input');
-$tag->setAttrs($arr);
+$tag->setAttr('disable', true);
 echo $tag->open(); // выведет <input id="test" class="eee bbb">
