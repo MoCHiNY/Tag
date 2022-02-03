@@ -1,5 +1,8 @@
 <?php
-$arr = ['Tag'];
+$arr = [
+  'iTag',
+  'Tag'
+];
 foreach ($arr as $value) {
   require_once($value . ".php");
 }
@@ -10,5 +13,4 @@ foreach ($arr as $value) {
 // $tag->setAttr('disable', true);
 // echo $tag->open(); // выведет <input id="test" class="eee bbb">
 
-echo (new Tag('input'))->setAttr('name', 'name1')->open();
-echo (new Tag('input'))->setAttr('name1', 'name2')->open();
+echo (new Tag('input'))->addClass('qww')->addClass('bbbsdsda')->open();
