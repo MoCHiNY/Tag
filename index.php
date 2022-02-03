@@ -1,7 +1,9 @@
 <?php
 $arr = [
   'iTag',
-  'Tag'
+  'Tag',
+  'img'
+
 ];
 foreach ($arr as $value) {
   require_once($value . ".php");
@@ -14,3 +16,4 @@ foreach ($arr as $value) {
 // echo $tag->open(); // выведет <input id="test" class="eee bbb">
 
 echo (new Tag('input'))->addClass('qww')->addClass('bbbsdsda')->open();
+echo (new Image())->setAttr('src', 'img.png')->addWH(200, 300); 
