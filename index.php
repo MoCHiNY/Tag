@@ -2,8 +2,16 @@
 $arr = [
   'iTag',
   'Tag',
-  'img'
-
+  'img',
+  'link',
+  'HtmlList',
+  'ListItem',
+  'Form',
+  'input',
+  'submit',
+  'Password',
+  'Hidden',
+  'TextArea'
 ];
 foreach ($arr as $value) {
   require_once($value . ".php");
@@ -15,5 +23,13 @@ foreach ($arr as $value) {
 // $tag->setAttr('disable', true);
 // echo $tag->open(); // выведет <input id="test" class="eee bbb">
 
-echo (new Tag('input'))->addClass('qww')->addClass('bbbsdsda')->open();
-echo (new Image())->setAttr('src', 'img.png')->addWH(200, 300); 
+
+// 
+
+$form = (new Form)->setAttrs(['action' => 'test.php', 'method' => 'GET']);
+
+echo $form->open();
+echo (new Input)->setAttr('name', 'user');
+echo (new Textarea)->setAttr('name', 'message')->show();
+echo new Submit;
+echo $form->close();
